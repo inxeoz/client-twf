@@ -1,0 +1,254 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* src/Main.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e0f7fa;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    background-color: #007bff;
+    
+    text-align: center;
+    color: white;
+  }
+  
+  .nav {
+    background-color: #0056b3;
+    padding: 7px;
+    text-align: center;
+  }
+  
+  .nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  .nav ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .intro, .mission, .founder, .call-to-action, .footer {
+    background: white;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .intro h2, .mission h2, .founder h2, .call-to-action h2, .footer h2 {
+    color: #007bff;
+  }
+  
+  .founder img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+  }
+  
+  .social-icons {
+    margin-top: 10px;
+  }
+  
+  .social-icons svg {
+    margin: 0 5px;
+    cursor: pointer;
+    color: #007bff;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }
+  
+  .footer svg {
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  
+/* loginForm.css */
+
+.login-form {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .login-form h2 {
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+  }
+  
+  .forgot-password {
+    text-align: right;
+    margin-bottom: 10px;
+  }
+  
+  .forgot-password a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  button[type="submit"] {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .social-login button {
+    background: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .social-login button svg {
+    margin-right: 8px;
+  }
+  
+  .register-link {
+    color: #777;
+  }
+  
+  .register-link a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  /* =============================== */
+
+
+  /* src/SignupForm.css */
+.nav ul{
+    margin-left: 550px;
+  }
+  .signup-form {
+      background: #f6f7f7;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: 0px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    
+    .signup-form h2 {
+      margin-bottom: 10px;
+      color: #007bff;
+    }
+    
+    .signup-form p {
+      margin-bottom: 20px;
+      color: #777;
+    }
+    .form-select {
+      border: 0px solid black;
+      background-color: #b7d3f0;
+      padding: 20px;
+     display: flex;
+     gap: 10px;
+     margin: 10px;
+     border-radius: 15px;
+    }
+    .form-select select{
+      margin: 10px;
+    }
+    .form-select input{
+      margin: 10px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    
+    
+    .form-group select,
+    .form-group input {
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 95%;
+    }
+    
+    button[type="submit"] {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    
+    .social-signup {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    
+    .social-signup button {
+      background: #b7d3f0;
+      color: #007bff;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+    }
+    .body{
+      background-image:  url(./img/regimg.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+  }  
+
+  /* ======================================================== */
