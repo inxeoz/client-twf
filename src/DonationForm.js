@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './index'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import './DonationForm.css';
 
 const DonationForm = () => {
-
     const [userName, setUserName] = useState('');
     const [email, setEmail] = useState('');
     const [contactNo, setContactNo] = useState('');
@@ -21,6 +20,7 @@ const DonationForm = () => {
             document.body.appendChild(script);
         });
     };
+
     const validateForm = () => {
         const newErrors = {};
         let isValid = true;
@@ -80,7 +80,7 @@ const DonationForm = () => {
         const res = await loadScript('https://checkout.razorpay.com/v1/checkout.js');
 
         if (!res) {
-            alert('Some error occurred while loading the Razorpay script');
+            alert('Error loading Razorpay script');
             return;
         }
 
@@ -117,86 +117,85 @@ const DonationForm = () => {
                     <li><Link to="/SignupForm">Join</Link></li>
                 </ul>
             </nav>
-            <div className="flex justify-center w-screen h-screen">
-                <div className="w-full max-w-4xl bg-white p-6">
+            <div className="flex center full-screen">
+                <div className="form-container">
                     <div className="text-center">
-                        <h1 className="text-3xl font-semibold text-gray-800 m-4 mt-7">Support!</h1>
-                        <h3 className="text-2xl font-extrabold text-blue-800 mb-4">TWKSAA WALFARE FOUNDATION</h3>
-                        <p className="text-lg py-5 text-gray-700">
+                        <h1 className="title">Support!</h1>
+                        <h3 className="subtitle">TWKSAA WALFARE FOUNDATION</h3>
+                        <p className="description">
                             Your contribution will empower students and educators, fostering innovation and academic excellence. Together, we can shape the future of education and research.
                         </p>
                     </div>
 
-                    <form className="bg-gray-100 p-6 rounded-lg shadow-lg">
-                        <h3 className="text-xl font-semibold mb-4">User Details:</h3>
+                    <form className="form">
+                        <h3 className="section-title">User Details:</h3>
 
-                        <div className="mb-4">
-                            <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
+                        <div className="input-group">
+                            <label htmlFor="name" className="label">Name</label>
                             <input
                                 id="name"
                                 type="text"
                                 value={userName}
                                 onChange={(e) => setUserName(e.target.value)}
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-blue-500 sm:text-sm"
+                                className="input"
                             />
-                            {errors.userName && <span className='text-sm text-red-500'>{errors.userName}</span>}
+                            {errors.userName && <span className='error'>{errors.userName}</span>}
                         </div>
 
-                        <div className="mb-4">
-                            <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                        <div className="input-group">
+                            <label htmlFor="email" className="label">Email</label>
                             <input
                                 id="email"
                                 type="email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-blue-500 sm:text-sm"
+                                className="input"
                             />
-                            {errors.email && <span className='text-sm text-red-500'>{errors.email}</span>}
+                            {errors.email && <span className='error'>{errors.email}</span>}
                         </div>
 
-                        <div className="mb-4">
-                            <label htmlFor="contact" className="block text-sm font-medium text-gray-700">Contact No</label>
+                        <div className="input-group">
+                            <label htmlFor="contact" className="label">Contact No</label>
                             <input
                                 id="contact"
                                 type="tel"
                                 value={contactNo}
                                 onChange={(e) => setContactNo(e.target.value)}
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-blue-500 sm:text-sm"
+                                className="input"
                             />
-                            {errors.contactNo && <span className='text-sm text-red-500'>{errors.contactNo}</span>}
+                            {errors.contactNo && <span className='error'>{errors.contactNo}</span>}
                         </div>
 
-                        <div className="mb-4">
-                            <label htmlFor="address" className="block text-sm font-medium text-gray-700">Address</label>
+                        <div className="input-group">
+                            <label htmlFor="address" className="label">Address</label>
                             <input
                                 id="address"
                                 type="text"
                                 value={address}
                                 onChange={(e) => setAddress(e.target.value)}
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-blue-500 sm:text-sm"
+                                className="input"
                             />
-                            {errors.address && <span className='text-sm text-red-500'>{errors.address}</span>}
+                            {errors.address && <span className='error'>{errors.address}</span>}
                         </div>
 
-                        <div className="mb-4">
-                            <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Donation Amount(INR)</label>
+                        <div className="input-group">
+                            <label htmlFor="amount" className="label">Donation Amount (INR)</label>
                             <input
                                 id="amount"
                                 type="number"
                                 value={amount}
                                 onChange={(e) => setAmount(e.target.value)}
-                                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-blue-500 sm:text-sm"
+                                className="input"
                             />
-                            {errors.amount && <span className='text-sm text-red-500'>{errors.amount}</span>}
+                            {errors.amount && <span className='error'>{errors.amount}</span>}
                         </div>
 
                         <button
                             type="button"
                             onClick={createRazorPayPayment}
-                            className="w-full bg-blue-600 text-white py-2 px-4 border border-transparent rounded-md shadow-sm text-base font-medium hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-offset-2"
+                            className="submit-btn"
                         >
                             Proceed to Payment
-
                         </button>
                     </form>
                 </div>
