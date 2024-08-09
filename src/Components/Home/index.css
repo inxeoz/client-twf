@@ -1,6 +1,3 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 /* src/Main.css */
 body {
@@ -246,7 +243,6 @@ body {
       width: 100%;
     }
     .body{
-      background-image:  url(./img/regimg.jpg);
       background-size: 100%;
       background-repeat: no-repeat;
   }  

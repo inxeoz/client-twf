@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, Outlet, useNavigate } from 'react-router-dom';
-import './index.css';
+import '../Home/index.css'
 import { FaGoogle, FaApple, FaRocket } from 'react-icons/fa';
 import axios from 'axios'; // Added axios import
 

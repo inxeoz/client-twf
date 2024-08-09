@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import  './index.css';
 import { FaFacebook, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 

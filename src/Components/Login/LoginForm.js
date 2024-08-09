@@ -1,6 +1,6 @@
 // src/LoginForm.js
 import React, { useState } from 'react';
-import './index.css';
+import '../Home/index.css'
 import { FaGoogle, FaApple } from 'react-icons/fa'; // Importing Google and Apple icons
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -39,7 +39,8 @@ const LoginForm = () => {
         localStorage.setItem('authToken', data.token);
 
         // Redirect to the dashboard
-        navigate('/dashboard');
+       // navigate('/dashboard');
+       navigate("/StudentPortal/StudentDashboard");
       } else {
         console.log("login error");
         setErrorMessage(data.message || 'Login failed');
