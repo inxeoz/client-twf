@@ -9,7 +9,8 @@ const LoginForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [formData, setFormData] = useState({
     email: '',
-    password: ''
+    password: '',
+    userType: 'Student',
   });
 
   const handleChange = (e) => {
@@ -24,7 +25,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/login', {
+      const response = await fetch('http://localhost:5000/auth/userlogin', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -39,8 +40,8 @@ const LoginForm = () => {
         localStorage.setItem('authToken', data.token);
 
         // Redirect to the dashboard
-       // navigate('/dashboard');
-       navigate("/StudentPortal/StudentDashboard");
+        // navigate('/dashboard');
+        navigate("/StudentPortal/StudentDashboard");
       } else {
         console.log("login error");
         setErrorMessage(data.message || 'Login failed');
@@ -51,9 +52,14 @@ const LoginForm = () => {
     }
   };
 
-  const handleRegisterClick = () => {
-    navigate('/SignupForm');
+
+
+
+  const onForgotPasswordClicked = (event) => {
+    event.preventDefault(); // Prevent default link behavior
+    navigate('/ForgotPassword');
   };
+
 
   return (
     <>
@@ -81,6 +87,7 @@ const LoginForm = () => {
               onChange={handleChange}
               required
             />
+
             <input
               type="password"
               name="password"
@@ -89,9 +96,21 @@ const LoginForm = () => {
               onChange={handleChange}
               required
             />
+
+            <select
+              name="userType"
+              value={formData.userType}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled>Select your user type</option>
+              <option value="Student">Student</option>
+              <option value="Teacher">Teacher</option>
+            </select>
+
           </div>
           <div className="forgot-password">
-            <a href="#">Forgot Password?</a>
+            <a href="#" onClick={onForgotPasswordClicked}>Forgot Password?</a>
           </div>
           <button type="submit">Login</button>
           <div className="social-login">
@@ -107,7 +126,7 @@ const LoginForm = () => {
         <div>
           <p>
             Don't have a registration yet?
-            <div className='Register-Link' onClick={handleRegisterClick}>
+            <div className='Register-Link'>
               <a href='#' style={{ color: 'blue' }}>Register here</a>
             </div>
           </p>

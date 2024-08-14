@@ -8,13 +8,13 @@ const SignupForm = () => {
   const navigate = useNavigate();
 
   const [formData, setFormData] = useState({
-    role: 'Student',
+    userType: 'Student',
     date: Date.now(),
     country: 'India',
     gender: 'Male',
     name: '',
     email: '',
-    password: ''
+    password: '',
   });
 
   const [responseMessage, setResponseMessage] = useState('');
@@ -32,7 +32,7 @@ const SignupForm = () => {
     e.preventDefault();
     console.error('Handle button');
     try {
-      const res = await axios.post('http://localhost:5000/signup', formData);
+      const res = await axios.post('http://localhost:5000/user/signup', formData);
       setResponseMessage(res.data); // Store the response message
       navigate('/LoginForm');
     } catch (err) {
@@ -67,7 +67,7 @@ const SignupForm = () => {
           <div className="form-group">
             <div className="form-select">
               <div className="form-one">
-                <select name="role" value={formData.role} onChange={handleChange}>
+                <select name="userType" value={formData.userType} onChange={handleChange}>
                   <option value="Student">Student</option>
                   <option value="Teacher">Teacher</option>
                   {/* Add more options as needed */}

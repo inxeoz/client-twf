@@ -9,7 +9,9 @@ import StudentProfile from "./Components/StudentPortal/Profile/StudentProfile";
 import StudentClasses from "./Components/StudentPortal/LiveClasses/StudentClasses"
 import StudentCourses from "./Components/StudentPortal/Courses/StudentCourses";
 import StudentAssignments from "./Components/StudentPortal/Assignments/StudentAssignments";
-
+// import TempDashboard from "./Components/Temp/TempDashboard";
+import ForgotPassword from './Components/Login/ForgotPassword';
+import PasswordReset from './Components/Login/PasswordReset'
 const App = () => {
   return (
     <>
@@ -19,7 +21,9 @@ const App = () => {
           <Route exact path="/" element={<Main />} />
           <Route path="/LoginForm" element={<LoginForm />} />
           <Route path="/SignupForm" element={<SignupForm />} />
+          <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/DonationForm" element={<DonationForm />}></Route>
+          <Route path="/PasswordReset" element={<PasswordReset />}></Route>
          
 
           <Route path="/StudentPortal/StudentDashboard" element={<StudentDashboard />}></Route>
