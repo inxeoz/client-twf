@@ -1,41 +1,30 @@
-import LoginForm from "./Components/Login/LoginForm";
-import Main from "./Components/Home/Main";
-import SignupForm from "./Components/Login/SignupForm";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import DonationForm from "./Components/Donation/DonationForm";
-import { CourseProvider } from "./Components/Context/CreateContext";
-import StudentDashboard from "./Components/StudentPortal/Dashboard/StudentDashboard";
-import StudentProfile from "./Components/StudentPortal/Profile/StudentProfile";
-import StudentClasses from "./Components/StudentPortal/LiveClasses/StudentClasses"
-import StudentCourses from "./Components/StudentPortal/Courses/StudentCourses";
-import StudentAssignments from "./Components/StudentPortal/Assignments/StudentAssignments";
-// import TempDashboard from "./Components/Temp/TempDashboard";
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import LoginForm from './Components/Login/LoginForm';
+import Main from './Components/Home/Main';
+import SignupForm from './Components/Login/SignupForm';
+import DonationForm from './Components/Donation/DonationForm';
 import ForgotPassword from './Components/Login/ForgotPassword';
-import PasswordReset from './Components/Login/PasswordReset'
+import PasswordReset from './Components/Login/PasswordReset';
+import TeacherDashboardEmbed from './Components/TeacherPortal/TeacherCompo'; // Assuming this is the component to render teacher portal routes
+import { CourseProvider } from './Components/Context/CreateContext';
+
 const App = () => {
   return (
-    <>
-      { <BrowserRouter>
-        <CourseProvider>
+    <BrowserRouter>
+      <CourseProvider>
         <Routes>
-          <Route exact path="/" element={<Main />} />
-          <Route path="/LoginForm" element={<LoginForm />} />
+          <Route path="/" element={<Main />} />
+          <Route path="/LoginForm/*" element={<TeacherDashboardEmbed />} />
           <Route path="/SignupForm" element={<SignupForm />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
-          <Route path="/DonationForm" element={<DonationForm />}></Route>
-          <Route path="/PasswordReset" element={<PasswordReset />}></Route>
-         
-
-          <Route path="/StudentPortal/StudentDashboard" element={<StudentDashboard />}></Route>
-          <Route path="/StudentPortal/StudentProfile" element={<StudentProfile />}></Route>
-          <Route path="/StudentPortal/StudentClasses" element={<StudentClasses />}></Route>    
-          <Route path="/StudentPortal/StudentCourses" element={<StudentCourses />}></Route>         
-          <Route path="/StudentPortal/StudentAssignments" element={<StudentAssignments />}></Route>         
-  
+          <Route path="/DonationForm" element={<DonationForm />} />
+          <Route path="/PasswordReset" element={<PasswordReset />} />
+          <Route path="/TeacherPortal/*" element={<TeacherDashboardEmbed />} />
         </Routes>
-        </CourseProvider>
-      </BrowserRouter>}
-    </>
+      </CourseProvider>
+    </BrowserRouter>
   );
 };
+
 export default App;

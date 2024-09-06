@@ -32,7 +32,7 @@ const SignupForm = () => {
     e.preventDefault();
     console.error('Handle button');
     try {
-      const res = await axios.post('http://localhost:5000/user/signup', formData);
+      const res = await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/user/signup`, formData);
       setResponseMessage(res.data); // Store the response message
       navigate('/LoginForm');
     } catch (err) {

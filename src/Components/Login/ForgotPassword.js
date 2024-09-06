@@ -27,7 +27,7 @@ const ResetPassword = () => {
 
   const handleSendEmail = async () => { 
     try {
-      await axios.post('http://localhost:5000/auth/forgotpassword', { email });
+      await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/forgotpassword`, { email });
       alert('Email sent successfully');
     } catch (error) {
       console.error('Error sending email:', error);
@@ -43,7 +43,7 @@ const ResetPassword = () => {
     }
 
     try {
-      const response = await axios.post('http://localhost:5000/auth/forgotpasswordreset', { email, password: newPassword, OTP });
+      const response = await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/forgotpasswordreset`,  { email, password: newPassword, OTP });
         alert('Password reset successful');
       
     } catch (error) {

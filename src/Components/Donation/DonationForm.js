@@ -61,7 +61,7 @@ const DonationForm = () => {
 
         let config = {
             method: 'post',
-            url: 'http://localhost:5000/payments',
+            url: `http://${process.env.REACT_APP_SERVER_IP}/payments`,
             headers: {
                 'Content-Type': 'application/json',
             },

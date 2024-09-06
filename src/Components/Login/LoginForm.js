@@ -25,7 +25,7 @@ const LoginForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5000/auth/userlogin', {
+      const response = await fetch(`http://${process.env.REACT_APP_SERVER_IP}/auth/userlogin`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
