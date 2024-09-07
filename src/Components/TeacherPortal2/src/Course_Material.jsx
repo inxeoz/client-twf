@@ -1,6 +1,6 @@
 import React from 'react';
 import './Course_Material.css'
-const CourseMaterial = () => {
+const Course_Material = () => {
   return (
     <div className="course-page">
       <div className="search-bar">
@@ -22,7 +22,7 @@ const CourseMaterial = () => {
           </svg>
         </button>
       </div>
-      <div id="course-list">
+      <div className="course-list">
         <div className="course-item">
           <div className="course-title">
             Full course on evolution of ancient animals
@@ -185,4 +185,4 @@ const CourseMaterial = () => {
 };
 
 
-export default CourseMaterial;
+export default Course_Material;

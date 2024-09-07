@@ -1,29 +1,34 @@
-// src/TeacherDashboardEmbed.tsx
 import React from 'react';
-import Sidebar from './Sidebar'
 import { Routes, Route } from 'react-router-dom';
-import Profile from './src/Profile/Profile';
-import Course from './src/Content/Course';
-import Student from './src/Student';
-import Course_Material from './src/Course_Material';
-import './TeacherCompo.css';
+import Sidebar from './TeacherSidebar.js';
 
-const TeacherApp = () => {
-  return (
-    <div className="app-container">
-      <div id='sidebar'>
-        <Sidebar /> 
-      </div>
-      <div id='content'>
-        <Routes>
-          <Route path="Profile" element={<Profile />} />
-          <Route path="Course" element={<Course />} />
-          <Route path="Student" element={<Student />} />
-          <Route path="Course_Material" element={<Course_Material />} />
-        </Routes>
-      </div>
-    </div>
-  );
-};
+import TeacherProfile from './src/Profile/Profile.jsx'
+import TeacherCourses from './src/Content/Course.jsx';
+import Students from './src/Student.jsx';
+import CourseMaterial from './src/Course_Material.jsx';
+import CreateEdit from './src/Create_Edit.jsx';
+import Project from './src/Profile/AcademiCon/Project.js';
 
-export default TeacherApp;
+import './TeacherCompo.css'
+
+function TeacherDashboard() {
+    return (
+        <div className='container'>
+            <div id='sidebar'>
+                <Sidebar />
+            </div>
+            <div className='content'>
+                <Routes>
+                    <Route path="TeacherProfile" element={<Project />} />
+                    <Route path="TeacherCourses" element={<TeacherCourses />} />
+                    <Route path="Students" element={<Students />} />
+                    <Route path="CourseMaterial" element={<CourseMaterial />} />
+                    <Route path="CreateEdit" element={<CreateEdit />} />
+                </Routes>
+            </div>
+        </div>
+
+    );
+}
+
+export default TeacherDashboard;

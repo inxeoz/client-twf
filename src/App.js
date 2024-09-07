@@ -6,11 +6,10 @@ import SignupForm from './Components/Login/SignupForm';
 import DonationForm from './Components/Donation/DonationForm';
 import ForgotPassword from './Components/Login/ForgotPassword';
 import PasswordReset from './Components/Login/PasswordReset';
-import TeacherDashboardEmbed from './Components/TeacherPortal/TeacherCompo'; // Assuming this is the component to render teacher portal routes
 import { CourseProvider } from './Components/Context/CreateContext';
 import AdminDashboard from './Components/AdminPortal/AdminDashboard';
-// import StudentDashboard from './Components/StudentPortal/StudentDashboard';
-// import StudentDashboard2 from './Components/StudentPortal/src/Dashboard/StudentDashboard';
+import TeacherDashboard from './Components/TeacherPortal/TeacherCompo';
+import TeacherDashboard2 from './Components/TeacherPortal2/TeacherCompo';
 
 const App = () => {
   return (
@@ -18,12 +17,11 @@ const App = () => {
       <CourseProvider>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/LoginForm/*" element={<AdminDashboard />} />
+          <Route path="/LoginForm/*" element={<TeacherDashboard />} />
           <Route path="/SignupForm" element={<SignupForm />} />
           <Route path="/ForgotPassword" element={<ForgotPassword />} />
           <Route path="/DonationForm" element={<DonationForm />} />
           <Route path="/PasswordReset" element={<PasswordReset />} />
-          <Route path="/TeacherPortal/*" element={<TeacherDashboardEmbed />} />
         </Routes>
       </CourseProvider>
     </BrowserRouter>

@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import './Profile.css';
 import { Link } from 'react-router-dom';
-import Project from './AcademiCon/Project';
-const TeacherProfile = () => {
+const Profile = () => {
   const [user, setUser] = useState({
     name: "Raj Kumar",
     email: "example@mail.com",
@@ -37,11 +36,8 @@ const TeacherProfile = () => {
 
   return (
       <main id="main-conntent">
-        <header id="heaader">
-        <div id="header-info">
-        
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAzBE_P3rPclK8gJnC-y1Mq7kNOvyL8yUHlg&s" alt="Profile" className="profile-pic" />
-  
+        <header className="heaader">
+        <div id="header-info" style={{ backgroundColor: "#4A90E2", color: "white", padding: "10px" }}>
         <h2>{user.name}</h2>
         <p>Email Address: {user.email}</p>
         <p>Phone Number: {user.phone}</p>
@@ -61,7 +57,7 @@ const TeacherProfile = () => {
           justifyContent: "center",
           alignItems: "center",
         }}>
-          <div style={{ backgroundColor: "lightgreen", padding: "20px", borderRadius: "5px" , }}>
+          <div style={{ backgroundColor: "blue", padding: "20px", borderRadius: "5px" , }}>
             <h3>Edit Details</h3>
             <form onSubmit={handleSubmit}>
               <div>
@@ -105,15 +101,12 @@ const TeacherProfile = () => {
       )}
 
         </header>
-        <section id="professional-info"  >
-          <h2>Professional Information</h2>
-          <h3>Teacher ID: UT10302002</h3>
-          <span id="h3">Specialization: 
-            <button className="specialization">Game Theory</button>
-             <button className="specialization">Machine Learning</button>
-             </span>
-       
-        <section id="academic-contributions">
+        <section className="professional-info"  >
+          <h3>Professional Information</h3>
+          <p>Teacher ID: UT10302002</p>
+          <p>Specialization: <span className="specialization">Game Theory</span> <span className="specialization">Machine Learning</span></p>
+        </section>
+        <section className="academic-contributions">
           <h3>Academic Contributions</h3>
           <div className="tabs">
             <button className="tab active">Research</button>
@@ -137,12 +130,11 @@ const TeacherProfile = () => {
               <p>DOI: <a href="https://doi.org/AA.BBB.CC" target="_blank" rel="noopener noreferrer">https://doi.org/AA.BBB.CC</a></p>
             </div>
           </div>
-          </section>
       </main>
   );
 };
 
-export default TeacherProfile;
+export default Profile;
 
 
 

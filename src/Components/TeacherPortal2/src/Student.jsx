@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Student.css'; 
 
-function Students() {
+function Student() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const handleExpand = () => {
@@ -100,4 +100,4 @@ function Students() {
   );
 }
 
-export default Students;
+export default Student;

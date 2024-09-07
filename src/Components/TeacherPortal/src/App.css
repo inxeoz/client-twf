@@ -1,0 +1,22 @@
+
+
+.app-containeer {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    position: relative;
+  }
+  
+  #sideeBar {
+ position: fixed;
+ margin:2px;
+  }
+  
+  .main-content {
+    margin-left: 300px;
+    margin-top: 8px;
+    width:80vw;
+  }
+  
+

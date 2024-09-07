@@ -1,19 +1,18 @@
 import React from 'react'
 import './Course.css'
 import { Link } from 'react-router-dom';
-const TeacherCourses = () => {
+const Course = () => {
   return (
-    <div id="app-container">
+    <div className="app-container">
     <header className="app-header">
       
         <div className='head>'>
         <button className='btn'>Current Courses</button>
         </div>
-        <Link to="/Create_Edit"  style={{textDecoration:'none' ,color:'black'}}>
+
         <div className='head>'>
         <button className='btn'>Credit/Edit Course</button>
         </div>
-        </Link>
         <Link to="/Course_Material"  style={{textDecoration:'none' ,color:'black'}}>
         <div className='head'>
         <button className='btn'>Course Material</button>
@@ -64,4 +63,4 @@ const TeacherCourses = () => {
   )
 }
 
-export default TeacherCourses;
+export default Course
