@@ -1,6 +1,6 @@
 // src/TeacherDashboardEmbed.tsx
 import React from 'react';
-import Sidebar from './src/Sidebar';
+import Sidebar from './Sidebar'
 import { Routes, Route } from 'react-router-dom';
 import Profile from './src/Profile/Profile';
 import Course from './src/Content/Course';

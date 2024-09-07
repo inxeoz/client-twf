@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 0;
+}
+
+.donor-list {
+  display: flex;
+}
+
+/* Main content area */
+.donar-record {
+  margin-left: 0; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+}
+
+.heading {
+  font-size: 2em;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+.add-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(1.02);
+}
+
+/* Form styles */
+.donor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.donor-form input,
+.donor-form button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1em;
+  width: 50%;
+}
+
+.donor-form input {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.donor-form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 10px;
+  padding: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.donor-form button:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.donor-form button:active {
+  transform: scale(1.02);
+}
+
+.donor-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0; 
+  margin-top: 20px;
+}
+
+.donor-table th,
+.donor-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.donor-table th {
+  background-color: #007bff;
+  color: #fff;
+  font-weight: bold;
+}
+
+.donor-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+}
+
+.donor-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .donar-record {
+    margin-left: 0; /* Removed margin adjustments related to sidebar */
+  }
+}
+
+@media (max-width: 768px) {
+  .donar-record {
+    margin-left: 0; /* Removed margin adjustments related to sidebar */
+  }
+}
+
+@media (max-width: 576px) {
+  .donar-record {
+    margin-left: 0; /* Removed margin adjustments related to sidebar */
+    padding: 10px; /* Adjust padding */
+  }
+
+  .heading {
+    font-size: 1.5em; /* Smaller heading font size */
+  }
+
+  .search-bar {
+    font-size: 0.9em; /* Smaller search bar font size */
+  }
+
+  .donor-form input,
+  .donor-form button {
+    font-size: 0.9em; /* Smaller form input and button font size */
+  }
+}
+
+/* Add button styling */
+.add-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(1.02);
+}
+
+/* Export button styling */
+.export-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #dc3545; /* Red color for export button */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 10px; /* Space between Add Donor and Export to PDF button */
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.export-button:hover {
+  background-color: #c82333; /* Darker red on hover */
+  transform: scale(1.05);
+}
+
+.export-button:active {
+  transform: scale(1.02);
+}
+
+/* Common button styles */
+button {
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1em;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button:active {
+  transform: scale(0.98);
+}

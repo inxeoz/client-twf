@@ -1,0 +1,194 @@
+
+.organization-page {
+  display: flex;
+  height: 100vh; 
+}
+
+
+
+/* Main content area styling */
+.organization-main-content {
+  flex: 1;
+  padding: 1.5rem; /* Padding around content */
+  background-color: #f4f4f4; /* Light gray background */
+  overflow-y: auto; 
+  text-align:center;
+}
+
+/* Styling for the header actions */
+.header-actions {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem; 
+}
+
+.add-organization-button, .export-data-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-organization-button {
+  background-color: #007bff; /* Blue background */
+  color: white;
+}
+
+.add-organization-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+}
+
+.export-data-button {
+  background-color: #28a745; /* Green background */
+  color: white;
+}
+
+.export-data-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+/* Styling for the form */
+.add-organization-form {
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.375rem; 
+  margin-bottom: 1.5rem;
+}
+
+.add-organization-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.add-organization-form input, 
+.add-organization-form select {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem; 
+}
+
+.submit-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem; /* Rounded corners */
+  background-color: #007bff; /* Blue background */
+  color: white;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #0056b3; 
+}
+
+/* Styling for the search bar */
+.search-bar {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.375rem; /* Rounded corners */
+  font-size: 1rem;
+}
+
+/* Table styling */
+.organization-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.organization-table th,
+.organization-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.organization-table th {
+  background-color: #007bff; /* Blue background for table headers */
+  color: white;
+}
+
+.organization-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.organization-table tr:hover {
+  background-color: #f1f1f1; /* Hover effect for rows */
+}
+
+/* Dropdown menu styling */
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-button {
+  background-color: #f1f1f1; /* Light background for button */
+  border: 1px solid #ddd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem; /* Rounded corners */
+  cursor: pointer;
+  font-size: 0.875rem;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 0.375rem; /* Rounded corners */
+  min-width: 160px;
+  z-index: 1000;
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-container:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-align: left;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1; /* Light gray background on hover */
+}
+
+/* Responsive styling for mobile screens */
+@media (max-width: 768px) {
+  .organization-page {
+    flex-direction: column; /* Stack sidebar and content vertically on smaller screens */
+  }
+
+  .sidebar-container {
+    width: 100%; /* Full width for sidebar on mobile screens */
+  }
+
+  .organization-main-content {
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+}
+
