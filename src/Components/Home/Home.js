@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './index.css';
+import './home.css'
 import { FaFacebook, FaTwitter, FaLinkedin, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import { Link, Outlet } from 'react-router-dom';
 
@@ -34,15 +34,6 @@ const Main = () => {
         </ul>
       </nav>
       <header className="header">
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-          <button onClick={fetchData}>Fetch Data</button>
-          {data && (
-            <div style={{ marginTop: '20px' }}>
-              <h3>Fetched Data:</h3>
-              <p>{data}</p>
-            </div>
-          )}
-        </div>
 
         <div className="header-content">
           <h1>TWKSAA WELFARE FOUNDATION</h1>

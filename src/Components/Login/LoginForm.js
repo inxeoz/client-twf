@@ -1,6 +1,6 @@
 // src/LoginForm.js
 import React, { useState } from 'react';
-import '../Home/index.css'
+import './LoginForm.css'
 import { FaGoogle, FaApple } from 'react-icons/fa'; // Importing Google and Apple icons
 import { Link, useNavigate } from 'react-router-dom';
 

@@ -2,10 +2,9 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useLocation } from 'react-router-dom';
+import './ForgotPassword.css'
 
 const ResetPassword = () => {
-  const location = useLocation();
-  const token = location.state?.token;
   const [email, setEmail] = useState('');
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
@@ -29,7 +28,7 @@ const ResetPassword = () => {
 
   const handleSendEmail = async () => { 
     try {
-      await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/send-email`, { email });
+      await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/forgotpassword`, { email });
       alert('Email sent successfully');
     } catch (error) {
       console.error('Error sending email:', error);
@@ -45,8 +44,9 @@ const ResetPassword = () => {
     }
 
     try {
-      await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/reset-password`, { token, password: newPassword, OTP });
-      alert('Password reset successful');
+      const response = await axios.post(`http://${process.env.REACT_APP_SERVER_IP}/auth/forgotpasswordreset`,  { email, password: newPassword, OTP });
+        alert('Password reset successful');
+      
     } catch (error) {
       console.error('Error resetting password:', error);
       alert('Error resetting password');
