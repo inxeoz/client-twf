@@ -13,11 +13,11 @@ import './TeacherCompo.css'
 
 function TeacherDashboard() {
     return (
-        <div className='container'>
+        <div className='main'>
             <div id='sidebar'>
                 <Sidebar />
             </div>
-            <div className='content'>
+            <div id='content'>
                 <Routes>
                     <Route path="TeacherProfile" element={<Project />} />
                     <Route path="TeacherCourses" element={<TeacherCourses />} />

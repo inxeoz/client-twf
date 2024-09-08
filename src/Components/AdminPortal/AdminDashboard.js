@@ -5,11 +5,11 @@ import Sidebar from './Sidebar';
 import Courses from './src/components/courseManagement/CourseManagement';
 import Organization from './src/components/organizationmanagement/Organization';
 import StudentProfile from './src/components/userManagement/studentMgm/Student';
+import './AdminDashboard.css'
 
 function AdminDashboard() {
     return (
-        <div>
-
+        <div className='main'>
             <div id='sidebar'>
             <Sidebar />
             </div>

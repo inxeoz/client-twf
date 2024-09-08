@@ -9,7 +9,6 @@ import PasswordReset from './Components/Login/PasswordReset';
 import { CourseProvider } from './Components/Context/CreateContext';
 import AdminDashboard from './Components/AdminPortal/AdminDashboard';
 import TeacherDashboard from './Components/TeacherPortal/TeacherCompo';
-import TeacherDashboard2 from './Components/TeacherPortal2/TeacherCompo';
 
 const App = () => {
   return (
