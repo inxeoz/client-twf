@@ -1,10 +1,10 @@
 import React from 'react';
 import Sidebar from './Sidebar';
- import Profile from './Profile/Profile.jsx'
-import Course from './Content/Course.jsx';
-import Student from './Student.jsx';
-import Course_Material from './Course_Material.jsx';
-import Create_Edit from './Create_Edit.jsx';
+ import Profile from '../Profile/Profile.jsx'
+import Course from '../Content/Course.jsx';
+import Student from '../Student.jsx';
+import Course_Material from '../Course_Material.jsx';
+import Create_Edit from '../Create_Edit.jsx';
 import { Route, Routes } from 'react-router-dom';
 import './App.css'; 
 

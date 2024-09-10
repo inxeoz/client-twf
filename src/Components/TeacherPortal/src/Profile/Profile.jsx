@@ -1,150 +1,67 @@
-import React, { useState } from "react";
-import './Profile.css';
-import { Link } from 'react-router-dom';
-import Project from './AcademiCon/Project';
-const TeacherProfile = () => {
-  const [user, setUser] = useState({
-    name: "Raj Kumar",
-    email: "example@mail.com",
-    phone: "1234567890",
-    dob: "17 Jul",
-  });
-  
+import React from 'react';
+import './Profile.css'; // Import the CSS file for styles
 
-  // State to handle the visibility of the popup
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-  // Function to handle the change in input fields
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setUser((prevUser) => ({
-      ...prevUser,
-      [name]: value,
-    }));
-  };
-
-  // Function to handle form submission and close the popup
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsPopupOpen(false); // Close the popup after submission
-  };
-
-  // Function to handle the opening of the popup
-  const handleEditClick = () => {
-    setIsPopupOpen(true);
-  };
-
-
+const Profile = () => {
   return (
-      <main id="main-conntent">
-        <header id="heaader">
-        <div id="header-info">
-        
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAzBE_P3rPclK8gJnC-y1Mq7kNOvyL8yUHlg&s" alt="Profile" className="profile-pic" />
-  
-        <h2>{user.name}</h2>
-        <p>Email Address: {user.email}</p>
-        <p>Phone Number: {user.phone}</p>
-        <p>DOB: {user.dob}</p>
-        <button id="edit-btn" onClick={handleEditClick}>Edit details</button>
-      </div>
-
-      {isPopupOpen && (
-        <div style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          backgroundColor: "rgba(0, 0, 0, 0.5)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}>
-          <div style={{ backgroundColor: "lightgreen", padding: "20px", borderRadius: "5px" , }}>
-            <h3>Edit Details</h3>
-            <form onSubmit={handleSubmit}>
-              <div>
-                <label>Email Address:</label>
-                <input
-                  style={{margin:"10px" ,padding:"10px", height:"40px" , width:"200px" , borderRadius:"5px"}}
-                  type="email"
-                  name="email"
-                  value={user.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label>Phone Number:</label>
-                <input
-                 style={{margin:"10px" ,padding:"10px", height:"40px" , width:"200px" , borderRadius:"5px"}}
-                  type="tel"
-                  name="phone"
-                  value={user.phone}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <div>
-                <label>DOB:</label>
-                <input
-                 style={{margin:"10px" , padding:"10px" , height:"40px" , width:"200px" , borderRadius:"5px"}}
-                  type="text"
-                  name="dob"
-                  value={user.dob}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              <button type="submit"  style={{margin:"5px" , height:"40px" , width:"100px" , borderRadius:"5px", marginLeft:"2px"}}>Save</button>
-            </form>
-            <button  style={{margin:"5px" , height:"40px" , width:"100px" , borderRadius:"5px"}} onClick={() => setIsPopupOpen(false)}>Cancel</button>
+    <div className="profile-container">
+      <div className="header">
+        <div className="user-details">
+          <div className="user-icon">
+            {/* Add a user icon or placeholder image */}
+            <img src="path/to/icon.png" alt="User Icon" />
+          </div>
+          <div className="user-info">
+            <h2>Raj Kumar</h2>
+            <p>Email Address: example@mail.com</p>
+            <p>Phone Number: 1234567890</p>
           </div>
         </div>
-      )}
+        <div className="dob-section">
+          <p>DOB: 17 Jul</p>
+          <button>Edit details</button>
+        </div>
+      </div>
 
-        </header>
-        <section id="professional-info"  >
-          <h2>Professional Information</h2>
-          <h3>Teacher ID: UT10302002</h3>
-          <span id="h3">Specialization: 
-            <button className="specialization">Game Theory</button>
-             <button className="specialization">Machine Learning</button>
-             </span>
-       
-        <section id="academic-contributions">
-          <h3>Academic Contributions</h3>
-          <div className="tabs">
-            <button className="tab active">Research</button>
-            <button className="tab">Projects</button>
-            <button className="tab">Approval</button>
-            <button className="tab">Participation</button>
+      <div className="professional-info">
+        <h3>Professional Information</h3>
+        <div className="info-row">
+          <span>Teacher ID:</span>
+          <span className="teacher-id">UT101302002</span>
+        </div>
+        <div className="info-row">
+          <span>Specialization:</span>
+          <div className="tags">
+            <span className="tag">Game Theory</span>
+            <span className="tag">Machine Learning</span>
           </div>
-          
-        </section>
-        <div className="research">
-            <div className="research-item">
-              <h4>Effect of Sunlight on Human Cognitive Functioning</h4>
-              <p>Publication Date: 30 Jul 2023</p>
-              <p>Author: Dr.rajan, En. vijya kumar</p>
-              <p>DOI: <a href="https://doi.org/AA.BBB.CC" target="_blank" rel="noopener noreferrer">https://doi.org/AA.BBB.CC</a></p>
-            </div>
-            <div className="research-item">
-              <h4>Effect of Sunlight on Human Cognitive Functioning</h4>
-              <p>Publication Date: 30 Jul 2023</p>
-              <p>Author: Dr.rajan, En. vijya kumar</p>
-              <p>DOI: <a href="https://doi.org/AA.BBB.CC" target="_blank" rel="noopener noreferrer">https://doi.org/AA.BBB.CC</a></p>
-            </div>
+        </div>
+      </div>
+
+      <div className="academic-contributions">
+        <h3>Academic Contributions</h3>
+        <div className="contributions-tabs">
+          <span className="tab active">Research</span>
+          <span className="tab">Projects</span>
+          <span className="tab">Approval</span>
+          <span className="tab">Conference</span>
+        </div>
+        <div className="contributions-list">
+          <div className="contribution-item">
+            <h4>Effect of Sunlight on Human Cognitive Functioning</h4>
+            <p>Publication Date: 30 Jul 2023</p>
+            <p>Author: Dr. ranjan, En. vijaya kumar</p>
+            <a href="https://doi.org/AA.BBB.CC">DOI: https://doi.org/AA.BBB.CC</a>
           </div>
-          </section>
-      </main>
+          <div className="contribution-item">
+            <h4>Effect of Sunlight on Human Cognitive Functioning</h4>
+            <p>Publication Date: 30 Jul 2023</p>
+            <p>Author: Dr. ranjan, En. vijaya kumar</p>
+            <a href="https://doi.org/AA.BBB.CC">DOI: https://doi.org/AA.BBB.CC</a>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
-export default TeacherProfile;
-
-
-
-
-
+export default Profile;

@@ -1,4 +1,16 @@
 /* General styling for AdminDashboard */
+
+.main {
+  width: 250px;
+  height: 100vh;
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  border-right: 2px solid #e0e0e0;
+  
+}
 #sidebar {
   width: 250px;
   height: 100vh;
